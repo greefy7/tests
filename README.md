@@ -3,12 +3,12 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "Tesao Hub - temporário",
-    SubTitle = "discord.gg/tsuoscripts",
+    Title = "Tesao Hub - sem key",
+    SubTitle = " entra em discord.gg/tsuoscripts",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
     Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
-    Theme = "Amethyst",
+    Theme = "Aqua",
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
 local Tabs = {
@@ -20,6 +20,7 @@ local Tabs = {
     Fruit = Window:AddTab({ Title = "🍎Devil Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "🟡Raid", Icon = "swords" }),
     Race = Window:AddTab({ Title = "🐰Race V4", Icon = "chevrons-right" }),
+
 }
 local Options = Fluent.Options
 
