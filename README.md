@@ -20,7 +20,7 @@ local Tabs = {
     Fruit = Window:AddTab({ Title = "🍎Devil Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "🟡Raid", Icon = "swords" }),
     Race = Window:AddTab({ Title = "🐰Race V4", Icon = "chevrons-right" }),
-    Shop = Window:AddTab({ Title = "🛒Shop", Icon = "shopping-cart" }),
+    
 }
 local Options = Fluent.Options
 
