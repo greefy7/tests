@@ -20,7 +20,6 @@ local Tabs = {
     Fruit = Window:AddTab({ Title = "🍎Devil Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "🟡Raid", Icon = "swords" }),
     Race = Window:AddTab({ Title = "🐰Race V4", Icon = "chevrons-right" }),
-    
 }
 local Options = Fluent.Options
 
@@ -2581,7 +2580,7 @@ local ImageButton = Instance.new("ImageButton")
 ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(128, 0, 128) -- Cor roxa
 ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
-ImageButton.Size = UDim2.new(0.0627121851, 0, 0.107579626, 0)
+ImageButton.Size = UDim2.new(0.0527121851, 0, 0.107579626, 0)
 ImageButton.Image = "rbxassetid://18578662592"
 
 UICorner.CornerRadius = UDim.new(0, 30)
@@ -2811,7 +2810,7 @@ local posZ = 0
       end)
 
       Tabs.Main:AddButton({
-        Title = "Redeem All Code",
+        Title = "usar todos xp Code",
         Description = "Redeem all code x2 exp",
         Callback = function()
             UseCode()
@@ -2841,7 +2840,7 @@ local posZ = 0
 
     Tabs.Main:AddButton({
         Title = "Fps Booster",
-        Description = "Boost your fps",
+        Description = "melhora seu  fps",
         Callback = function()
             FPSBooster()
         end
@@ -2893,11 +2892,11 @@ local posZ = 0
 --Mastery
     Tabs.Main:AddParagraph({
         Title = "Mastery Farm",
-        Content = "Auto farm your mastery"
+        Content = "Auto farm seu mastery"
     })
 
     local DropdownMastery = Tabs.Main:AddDropdown("DropdownMastery", {
-        Title = "Farm Mode",
+        Title = "modo de farm",
         Values = {"Level","Near Mobs",},
         Multi = false,
         Default = 1,
@@ -2926,7 +2925,7 @@ local posZ = 0
     KillPercent = 40
     local SliderHealt = Tabs.Main:AddSlider("SliderHealt", {
         Title = "Health %",
-        Description = "Health for mastery",
+        Description = "vida para mastery",
         Default = 40,
         Min = 0,
         Max = 100,
