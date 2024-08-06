@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "Tesao Hub - temporário",
+    Title = "Tsuo Hub 🇧🇷 -  SEM KEY version",
     SubTitle = "discord.gg/tsuoscripts",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
@@ -19,7 +19,7 @@ local Tabs = {
     Teleport = Window:AddTab({ Title = "🏰Teleport", Icon = "palmtree" }),
     Fruit = Window:AddTab({ Title = "🍎Devil Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "🟡Raid", Icon = "swords" }),
-    Race = Window:AddTab({ Title = "🐰Race V4", Icon = "chevrons-right" }),
+    Race = Window:AddTab({ Title = "🐰Race V4", Icon = "rabbit" }),
 
 }
 local Options = Fluent.Options
