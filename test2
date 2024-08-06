@@ -1,11 +1,4 @@
         local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-        repeat
-            task.wait()
-        until game:IsLoaded() and game.Players and game.Players.LocalPlayer
-        if islclosure(loadstring) then
-            while true do
-            end -- Crash cracking ppl
-        end
         --- Hub Values ---
         Hub = {}
         Hub.Name = "Tsuo Hub"
@@ -198,7 +191,7 @@
             ImageLabel.BorderSizePixel = 0
             ImageLabel.Position = UDim2.new(0.48888889, 0, 0.48888889, 0)
             ImageLabel.Size = UDim2.new(0, 45, 0, 45)
-            ImageLabel.Image = "rbxassetid://15241946029"
+            ImageLabel.Image = "rbxassetid://18578662592"
             
             TextButton.Parent = MainFrame
             TextButton.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -220,12 +213,12 @@
         local Window =
             Fluent:CreateWindow(
             {
-                Title = "Tsuo Hub Update 20",
-                SubTitle = "Dev By VMH09",
+                Title = "Tsuo Hub sem key",
+                SubTitle = "join discord.gg/tsuoscripts9",
                 TabWidth = 160,
                 Size = UDim2.fromOffset(Size11, Size22),
                 Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
-                Theme = "Darker",
+                Theme = "Amwthyst",
                 MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
             }
         )
@@ -2041,7 +2034,7 @@
         function getBlueGear()
             if game.workspace.Map:FindFirstChild("MysticIsland") then
                 for i, v in pairs(game.workspace.Map.MysticIsland:GetChildren()) do
-                    if v:IsA("MeshPart") and v.MeshId == "rbxassetid://10153114969" then --and not v.CanCollide then
+                    if v:IsA("MeshPart") and v.MeshId == "rbxassetid://18578662592" then --and not v.CanCollide then
                         return v
                     end
                 end
@@ -2170,7 +2163,7 @@
             end
             for i, v in pairs(game:GetService("Workspace").Map.MysticIsland:GetDescendants()) do
                 if v:IsA("MeshPart") then
-                    if v.MeshId == "rbxassetid://6745037796" then
+                    if v.MeshId == "rbxassetid://18578662592" then
                         return v
                     end
                 end
