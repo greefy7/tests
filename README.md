@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "Tsuo Hub 🇧🇷 -  SEM KEY version",
+    Title = "Tesao Hub beta 🇧🇷 -  SEM KEY version",
     SubTitle = "discord.gg/tsuoscripts",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
