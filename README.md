@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "Tesao Hub beta 🇧🇷 -  SEM KEY version",
+    Title = "Tesao Hub - temporário",
     SubTitle = "discord.gg/tsuoscripts",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
@@ -19,8 +19,7 @@ local Tabs = {
     Teleport = Window:AddTab({ Title = "🏰Teleport", Icon = "palmtree" }),
     Fruit = Window:AddTab({ Title = "🍎Devil Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "🟡Raid", Icon = "swords" }),
-    Race = Window:AddTab({ Title = "🐰Race V4", Icon = "animal" }),
-
+    Race = Window:AddTab({ Title = "🐰Race V4", Icon = "chevrons-right" }),
 }
 local Options = Fluent.Options
 
@@ -2582,7 +2581,7 @@ ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(128, 0, 128) -- Cor roxa
 ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
 ImageButton.Size = UDim2.new(0.0527121851, 0, 0.107579626, 0)
-ImageButton.Image = "rbxassetid://18578662592"
+ImageButton.Image = "rbxassetid:/"18832313245"
 
 UICorner.CornerRadius = UDim.new(0, 30)
 UICorner.Parent = ImageButton
