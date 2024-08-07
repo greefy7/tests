@@ -1,61 +1,76 @@
--- Script para criar uma GUI avançada no Roblox
-local TweenService = game:GetService("TweenService")
+-- Services
 local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
+local TweenService = game:GetService("TweenService")
+
+-- UI Elements
 local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
+local MainFrame = Instance.new("Frame")
+local Header = Instance.new("Frame")
+local Logo = Instance.new("ImageLabel")
 local Title = Instance.new("TextLabel")
 local Subtitle = Instance.new("TextLabel")
 local MinimizeButton = Instance.new("TextButton")
 local Tabs = Instance.new("Frame")
 local ScriptHubTab = Instance.new("TextButton")
 local BloxFruitsTab = Instance.new("TextButton")
+local Content = Instance.new("Frame")
 local ToggleFrame = Instance.new("Frame")
-local ToggleButton1 = Instance.new("TextButton")
-local ToggleButton2 = Instance.new("TextButton")
-local ToggleButton3 = Instance.new("TextButton")
+local Toggle1 = Instance.new("TextButton")
+local Toggle2 = Instance.new("TextButton")
+local Toggle3 = Instance.new("TextButton")
 
--- Configurações da GUI
+-- Configure UI
 ScreenGui.Name = "TsuoHub"
 ScreenGui.Parent = StarterGui
 
-Frame.Name = "MainFrame"
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(34, 34, 34) -- Cor de fundo
-Frame.Size = UDim2.new(0.5, 0, 0.5, 0)
-Frame.Position = UDim2.new(0.25, 0, 0.25, 0)
-Frame.BorderSizePixel = 0
-Frame.ClipsDescendants = true
-Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Dark background
+MainFrame.BorderSizePixel = 0
+MainFrame.Size = UDim2.new(0.5, 0, 0.5, 0)
+MainFrame.Position = UDim2.new(0.25, 0, 0.25, 0)
+MainFrame.ClipsDescendants = true
 
--- Título
+-- Header
+Header.Name = "Header"
+Header.Parent = MainFrame
+Header.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- Slightly lighter background
+Header.Size = UDim2.new(1, 0, 0, 50)
+Header.Position = UDim2.new(0, 0, 0, 0)
+Header.BorderSizePixel = 0
+
+Logo.Name = "Logo"
+Logo.Parent = Header
+Logo.BackgroundTransparency = 1
+Logo.Size = UDim2.new(0, 30, 0, 30)
+Logo.Position = UDim2.new(0, 10, 0, 10)
+Logo.Image = "rbxassetid://18578662592"
+Logo.ScaleType = Enum.ScaleType.Fit
+
 Title.Name = "Title"
-Title.Parent = Frame
+Title.Parent = Header
 Title.BackgroundTransparency = 1
-Title.Position = UDim2.new(0, 10, 0, 10)
-Title.Size = UDim2.new(1, -20, 0, 30)
+Title.Position = UDim2.new(0, 50, 0, 10)
+Title.Size = UDim2.new(0.6, 0, 0, 20)
 Title.Font = Enum.Font.GothamBold
 Title.Text = "TsuoHub"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 24
-Title.TextStrokeTransparency = 0.8
+Title.TextSize = 18
 
--- Subtítulo
 Subtitle.Name = "Subtitle"
-Subtitle.Parent = Frame
+Subtitle.Parent = Header
 Subtitle.BackgroundTransparency = 1
-Subtitle.Position = UDim2.new(0, 10, 0, 40)
-Subtitle.Size = UDim2.new(1, -20, 0, 20)
+Subtitle.Position = UDim2.new(0, 50, 0, 30)
+Subtitle.Size = UDim2.new(0.6, 0, 0, 20)
 Subtitle.Font = Enum.Font.Gotham
 Subtitle.Text = "by Tsuoscripts"
 Subtitle.TextColor3 = Color3.fromRGB(150, 150, 150)
 Subtitle.TextSize = 14
-Subtitle.TextStrokeTransparency = 0.8
 
--- Botão de Minimizar
 MinimizeButton.Name = "MinimizeButton"
-MinimizeButton.Parent = Frame
-MinimizeButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+MinimizeButton.Parent = Header
+MinimizeButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 MinimizeButton.Position = UDim2.new(1, -40, 0, 10)
 MinimizeButton.Size = UDim2.new(0, 30, 0, 30)
 MinimizeButton.Font = Enum.Font.Gotham
@@ -64,81 +79,98 @@ MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 MinimizeButton.TextSize = 20
 MinimizeButton.TextStrokeTransparency = 0.8
 
--- Função para minimizar a GUI
 MinimizeButton.MouseButton1Click:Connect(function()
-    Frame.Visible = not Frame.Visible
+    MainFrame.Visible = not MainFrame.Visible
 end)
 
--- Abas
+-- Tabs
 Tabs.Name = "Tabs"
-Tabs.Parent = Frame
-Tabs.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-Tabs.Size = UDim2.new(1, 0, 0, 40)
-Tabs.Position = UDim2.new(0, 0, 0, 80)
+Tabs.Parent = MainFrame
+Tabs.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Tabs.Size = UDim2.new(1, 0, 0, 50)
+Tabs.Position = UDim2.new(0, 0, 0, 50)
 
 ScriptHubTab.Name = "ScriptHubTab"
 ScriptHubTab.Parent = Tabs
-ScriptHubTab.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+ScriptHubTab.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 ScriptHubTab.Position = UDim2.new(0, 0, 0, 0)
 ScriptHubTab.Size = UDim2.new(0.5, -2, 1, -2)
 ScriptHubTab.Font = Enum.Font.Gotham
 ScriptHubTab.Text = "ScriptHub"
 ScriptHubTab.TextColor3 = Color3.fromRGB(255, 255, 255)
-ScriptHubTab.TextSize = 18
+ScriptHubTab.TextSize = 16
 ScriptHubTab.TextStrokeTransparency = 0.8
-ScriptHubTab.MouseButton1Click:Connect(function()
-    -- Mostrar conteúdo da aba ScriptHub
-end)
 
 BloxFruitsTab.Name = "BloxFruitsTab"
 BloxFruitsTab.Parent = Tabs
-BloxFruitsTab.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+BloxFruitsTab.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 BloxFruitsTab.Position = UDim2.new(0.5, 2, 0, 0)
 BloxFruitsTab.Size = UDim2.new(0.5, -2, 1, -2)
 BloxFruitsTab.Font = Enum.Font.Gotham
 BloxFruitsTab.Text = "Blox Fruits"
 BloxFruitsTab.TextColor3 = Color3.fromRGB(255, 255, 255)
-BloxFruitsTab.TextSize = 18
+BloxFruitsTab.TextSize = 16
 BloxFruitsTab.TextStrokeTransparency = 0.8
-BloxFruitsTab.MouseButton1Click:Connect(function()
-    -- Mostrar conteúdo da aba Blox Fruits
-end)
 
--- Área de Toggles
+-- Content Area
+Content.Name = "Content"
+Content.Parent = MainFrame
+Content.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Content.Position = UDim2.new(0, 0, 0, 100)
+Content.Size = UDim2.new(1, 0, 1, -150)
+
+-- Toggle Frame
 ToggleFrame.Name = "ToggleFrame"
-ToggleFrame.Parent = Frame
+ToggleFrame.Parent = Content
 ToggleFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-ToggleFrame.Position = UDim2.new(0, 0, 0, 120)
-ToggleFrame.Size = UDim2.new(1, 0, 1, -160)
+ToggleFrame.Position = UDim2.new(0, 0, 0, 10)
+ToggleFrame.Size = UDim2.new(1, 0, 1, -20)
 
--- Funções dos Toggles
-local function createToggle(name, icon, parent, position)
+-- Toggles
+local function createToggle(name, iconId, parent, position)
     local toggle = Instance.new("TextButton")
     toggle.Name = name
     toggle.Parent = parent
-    toggle.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    toggle.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
     toggle.Position = position
-    toggle.Size = UDim2.new(1, -10, 0, 40)
+    toggle.Size = UDim2.new(1, -10, 0, 50)
     toggle.Font = Enum.Font.Gotham
     toggle.Text = name
     toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
     toggle.TextSize = 16
     toggle.TextStrokeTransparency = 0.8
     toggle.AutoButtonColor = false
+    toggle.Image = "rbxassetid://" .. iconId
+    toggle.ImageRectSize = Vector2.new(24, 24)
+    toggle.ImageRectOffset = Vector2.new(0, 0)
+    
     toggle.MouseButton1Click:Connect(function()
-        if toggle.BackgroundColor3 == Color3.fromRGB(60, 60, 60) then
-            toggle.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-            -- Ativar a funcionalidade
+        if toggle.BackgroundColor3 == Color3.fromRGB(50, 50, 50) then
+            toggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red when deactivated
+            -- Handle toggle deactivation
         else
-            toggle.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-            -- Desativar a funcionalidade
+            toggle.BackgroundColor3 = Color3.fromRGB(50, 50, 50) -- Default color
+            -- Handle toggle activation
         end
     end)
+    
     return toggle
 end
 
-createToggle("Farm Bones", "icon1", ToggleFrame, UDim2.new(0, 5, 0, 5))
-createToggle("Auto Race", "icon2", ToggleFrame, UDim2.new(0, 5, 0, 50))
-createToggle("Auto Sword", "icon3", ToggleFrame, UDim2.new(0, 5, 0, 95))
-createToggle("Auto Raid", "icon4", ToggleFrame, UDim2.new(0, 5, 0, 140))
-createToggle("Auto Fruit", "icon5", ToggleFrame, UDim2.new(0, 5, 0, 185))
+-- Create Toggles
+createToggle("Farm Bones", "icon1_id", ToggleFrame, UDim2.new(0, 5, 0, 5))
+createToggle("Auto Race", "icon2_id", ToggleFrame, UDim2.new(0, 5, 0, 60))
+createToggle("Auto Sword", "icon3_id", ToggleFrame, UDim2.new(0, 5, 0, 115))
+createToggle("Auto Raid", "icon4_id", ToggleFrame, UDim2.new(0, 5, 0, 170))
+createToggle("Auto Fruit", "icon5_id", ToggleFrame, UDim2.new(0, 5, 0, 225))
+
+-- Animation Tweens
+local function animateUI()
+    local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    
+    local goal = {Size = UDim2.new(1, 0, 1, 0)}
+    local tween = TweenService:Create(MainFrame, tweenInfo, goal)
+    tween:Play()
+end
+
+animateUI()
